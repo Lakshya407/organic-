@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 import { Toaster } from "sonner"
 import { siteConfig } from "@/lib/config"
+import { organicStoreConfig } from "@/lib/organic-config"
 import "./globals.css"
 
 const inter = Inter({
@@ -13,14 +14,15 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
-    template: `%s | ${siteConfig.name}`,
+    default: `${organicStoreConfig.name} — ${organicStoreConfig.tagline}`,
+    template: `%s | ${organicStoreConfig.name}`,
   },
-  description: siteConfig.description,
+  description:
+    "Discover pantry favorites, spices, and everyday ingredients from Nature's Basket. A demo storefront with sample products and WhatsApp ordering.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
-    siteName: siteConfig.name,
+    siteName: organicStoreConfig.name,
     locale: siteConfig.locale.replace("-", "_"),
   },
 }
@@ -28,14 +30,14 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: siteConfig.name,
+  name: organicStoreConfig.name,
   url: siteConfig.url,
 }
 
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: siteConfig.name,
+  name: organicStoreConfig.name,
   url: siteConfig.url,
   potentialAction: {
     "@type": "SearchAction",
