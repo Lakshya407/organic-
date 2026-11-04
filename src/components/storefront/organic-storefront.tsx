@@ -203,8 +203,8 @@ export function OrganicStorefront() {
             <div className="absolute -bottom-5 right-4 h-28 w-28 rounded-full border border-[#c8d4bd] sm:right-0 sm:h-40 sm:w-40" />
             <div className="relative aspect-[1.12/1] overflow-hidden rounded-[2rem] shadow-[0_25px_70px_rgba(42,66,47,0.18)] sm:rounded-[2.5rem]">
               <ProductImage
-                src="/images/organic/market-produce.jpg"
-                alt="Fresh produce arranged at a market"
+                src="/images/organic/organic-basmati-rice.jpg"
+                alt="A close-up of uncooked rice grains"
                 priority
                 sizes="(max-width: 1024px) 90vw, 55vw"
                 className="object-cover"
