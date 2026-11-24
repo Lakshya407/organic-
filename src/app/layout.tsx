@@ -5,6 +5,7 @@ import { getLocale, getMessages } from "next-intl/server"
 import { Toaster } from "sonner"
 import { siteConfig } from "@/lib/config"
 import { organicStoreConfig } from "@/lib/organic-config"
+import { themeBootScript } from "@/lib/theme"
 import "./globals.css"
 
 const inter = Inter({
@@ -55,8 +56,11 @@ export default async function RootLayout({
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white">
+    <html lang={locale} suppressHydrationWarning className={`${inter.variable} h-full antialiased`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+      </head>
+      <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

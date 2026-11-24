@@ -6,20 +6,20 @@ import { createInquiryUrl } from "@/lib/whatsapp"
 export function OrganicFooter() {
   return (
     <>
-      <footer className="bg-[#1f382b] text-[#f6f4ea]">
+      <footer className="border-t border-border bg-store-panel text-foreground">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1.2fr] lg:py-16">
           <div>
-            <Link href="/#home" className="font-serif text-2xl font-semibold">
+            <Link href="/#home" className="font-sans text-2xl font-semibold">
               {organicStoreConfig.name}
             </Link>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-[#cbd4c8]">
+            <p className="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">
               Pantry essentials, home textiles, and wooden homeware.
             </p>
             <a
               href={createInquiryUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#738477] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               Chat on WhatsApp
@@ -28,7 +28,7 @@ export function OrganicFooter() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#dce4d8]">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
               Explore
             </h2>
             <ul className="mt-4 space-y-3">
@@ -37,7 +37,7 @@ export function OrganicFooter() {
                 ["Contact", "/#contact"],
               ].map(([label, href]) => (
                 <li key={label}>
-                  <Link href={href} className="text-sm text-[#cbd4c8] hover:text-white">
+                  <Link href={href} className="text-sm text-muted-foreground hover:text-foreground">
                     {label}
                   </Link>
                 </li>
@@ -46,25 +46,25 @@ export function OrganicFooter() {
           </div>
 
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#dce4d8]">
+            <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">
               Get in touch
             </h2>
-            <address className="mt-4 space-y-3 text-sm not-italic leading-6 text-[#cbd4c8]">
+            <address className="mt-4 space-y-3 text-sm not-italic leading-6 text-muted-foreground">
               <p>
-                <a href={createInquiryUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a href={createInquiryUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-foreground">
                   {organicStoreConfig.whatsappDisplayNumber}
                 </a>
               </p>
               <p>
-                <a href={`mailto:${organicStoreConfig.email}`} className="hover:text-white">
+                <a href={`mailto:${organicStoreConfig.email}`} className="hover:text-foreground">
                   {organicStoreConfig.email}
                 </a>
               </p>
             </address>
           </div>
         </div>
-        <div className="border-t border-white/15">
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs leading-5 text-[#cbd4c8] sm:px-8 md:flex-row md:items-center md:justify-between">
+        <div className="border-t border-border">
+          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-5 text-xs leading-5 text-muted-foreground sm:px-8 md:flex-row md:items-center md:justify-between">
             <p>
               © {new Date().getFullYear()} {organicStoreConfig.name}. Demo storefront.
             </p>
@@ -78,7 +78,7 @@ export function OrganicFooter() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Contact ${organicStoreConfig.name} on WhatsApp`}
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#28a05a] text-white shadow-[0_8px_28px_rgba(27,65,41,0.28)] transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1f382b]"
+        className="fixed bottom-5 right-5 z-40 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-store-primary text-store-primary-foreground shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
       >
         <MessageCircle className="h-6 w-6" aria-hidden="true" />
       </a>
