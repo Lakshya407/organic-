@@ -6,20 +6,7 @@ const BASE_URL = process.env.BASE_URL ?? "http://localhost:3100"
 const PAGES = [
   { name: "home", path: "/" },
   { name: "shop", path: "/shop" },
-  { name: "shop-page-2", path: "/shop?page=2" },
-  { name: "category-electronics", path: "/electronics" },
-  { name: "subcategory-headphones", path: "/headphones" },
-  { name: "subcategory-speakers", path: "/speakers" },
-  { name: "category-clothing", path: "/clothing" },
-  { name: "category-home-kitchen", path: "/home-kitchen" },
-  { name: "category-accessories", path: "/accessories" },
-  { name: "category-food-drink", path: "/food-drink" },
-  { name: "product-with-body", path: "/wireless-over-ear-headphones" },
-  { name: "product-with-body-2", path: "/minimalist-desk-lamp" },
-  { name: "product-with-body-3", path: "/organic-cotton-tshirt" },
-  { name: "product-no-body", path: "/single-origin-coffee-beans" },
   { name: "brands-index", path: "/brands" },
-  { name: "brand-detail", path: "/volt-audio" },
   { name: "blog-index", path: "/blog" },
   { name: "blog-post-1", path: "/blog/choose-right-headphones" },
   { name: "blog-post-2", path: "/blog/why-organic-cotton" },
@@ -37,6 +24,7 @@ const PAGES = [
   { name: "register", path: "/auth/register" },
   { name: "checkout", path: "/checkout" },
   { name: "404", path: "/this-page-does-not-exist" },
+  { name: "removed-product", path: "/wireless-over-ear-headphones", expectedStatus: 404 },
   { name: "sitemap", path: "/sitemap.xml" },
   { name: "robots", path: "/robots.txt" },
 ]
@@ -123,7 +111,7 @@ async function main() {
         const hasMain = await pageObj.locator("main, [role='main']").count().catch(() => 0)
 
         // Status code check — 404 page is expected to return 404
-        const expected404 = page.name === "404"
+        const expected404 = page.name === "404" || page.expectedStatus === 404
         const statusOk = expected404 ? status === 404 : status < 400
 
         const issues = []

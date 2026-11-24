@@ -8,7 +8,7 @@ import { StarRating } from "@/components/products/star-rating"
 import { formatPrice } from "@/lib/utils"
 import { PLACEHOLDER_IMAGE } from "@/lib/constants"
 import type { Product } from "@/types"
-import data from "@/data/products.json"
+import data from "@/data/legacy-catalog"
 
 const allProducts = data.products as Product[]
 

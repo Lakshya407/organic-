@@ -9,8 +9,6 @@ import { createInquiryUrl } from "@/lib/whatsapp"
 const links = [
   { label: "Home", href: "/#home" },
   { label: "Shop", href: "/#shop" },
-  { label: "Categories", href: "/#categories" },
-  { label: "About Us", href: "/#story" },
   { label: "Contact", href: "/#contact" },
 ]
 

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s | ${organicStoreConfig.name}`,
   },
   description:
-    "Discover pantry favorites, spices, and everyday ingredients from Nature's Basket. A demo storefront with sample products and WhatsApp ordering.",
+    "Browse organic turmeric, dry fruit treats, home textiles, and wooden homeware from Nature's Basket.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",

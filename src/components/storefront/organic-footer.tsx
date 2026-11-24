@@ -13,8 +13,7 @@ export function OrganicFooter() {
               {organicStoreConfig.name}
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-6 text-[#cbd4c8]">
-              A demo storefront for thoughtful pantry staples. Browse the collection
-              and get in touch to ask about an order.
+              Pantry essentials, home textiles, and wooden homeware.
             </p>
             <a
               href={createInquiryUrl()}
@@ -35,8 +34,6 @@ export function OrganicFooter() {
             <ul className="mt-4 space-y-3">
               {[
                 ["Shop all products", "/#shop"],
-                ["Shop by category", "/#categories"],
-                ["Our story", "/#story"],
                 ["Contact", "/#contact"],
               ].map(([label, href]) => (
                 <li key={label}>
@@ -53,10 +50,9 @@ export function OrganicFooter() {
               Get in touch
             </h2>
             <address className="mt-4 space-y-3 text-sm not-italic leading-6 text-[#cbd4c8]">
-              <p>{organicStoreConfig.address}</p>
               <p>
-                <a href={`tel:${organicStoreConfig.phoneHref}`} className="hover:text-white">
-                  {organicStoreConfig.phone}
+                <a href={createInquiryUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  {organicStoreConfig.whatsappDisplayNumber}
                 </a>
               </p>
               <p>
@@ -64,7 +60,6 @@ export function OrganicFooter() {
                   {organicStoreConfig.email}
                 </a>
               </p>
-              <p>{organicStoreConfig.hours}</p>
             </address>
           </div>
         </div>

@@ -10,8 +10,6 @@ import {
 // (covered by robots.txt disallow rules).
 const STATIC_PATHS = [
   { path: "", priority: 1, changeFrequency: "daily" as const },
-  { path: "/shop", priority: 0.9, changeFrequency: "daily" as const },
-  { path: "/brands", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/blog", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/pages", priority: 0.5, changeFrequency: "monthly" as const },
   { path: "/about", priority: 0.6, changeFrequency: "monthly" as const },

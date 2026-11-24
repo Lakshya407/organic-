@@ -2,6 +2,7 @@
 
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
+import legacyCatalog from "@/data/legacy-catalog"
 import type { CartItem, ProductImage } from "@/types"
 
 interface CartState {
@@ -108,6 +109,13 @@ export const useCartStore = create<CartState>()(
     }),
     {
       name: "cart-storage",
+      merge: (persisted, current) => {
+        const saved = persisted as Pick<CartState, "items"> | undefined
+        const items = saved?.items?.filter((item) =>
+          legacyCatalog.products.some((product) => product.id === item.productId)
+        ) ?? []
+        return { ...current, items }
+      },
       partialize: (state) => ({ items: state.items }),
     }
   )

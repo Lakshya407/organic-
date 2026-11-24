@@ -6,7 +6,7 @@ This guide covers how to customize the ecommerce starter for your store.
 
 1. Update `src/lib/config.ts` with your store name, contact info, and social links
 2. Replace placeholder images in `public/images/products/`
-3. Update product data in `src/data/products.json`
+3. Update product data in `src/data/products.ts`
 4. Edit theme colors in `src/app/globals.css`
 5. Connect your payment provider (see below)
 
@@ -81,14 +81,7 @@ export const mobileMenuSections = [
 
 ## Products & Categories
 
-Product data lives in `src/data/products.json`. To add a product:
-
-1. Add the product object to the `products` array
-2. Reference existing `categoryIds` or create new categories
-3. Assign a `brandId` from the `brands` array
-4. Set image URLs (or use `/images/products/placeholder.svg`)
-
-To swap to a CMS or database, implement the `ProductRepository` and `CategoryRepository` interfaces from `src/types/index.ts` and update `src/lib/repositories/index.ts`.
+The storefront catalog lives in `src/data/products.ts`. Add an entry to the `products` array with a unique ID, category, price in rupees, pack size, description, image, alt text, and details. Category filters are derived from the catalog. Store product images in `public/images/organic/`.
 
 ## Connecting a Payment Provider
 
